@@ -10,9 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textField1: UITextField!
+    @IBOutlet weak var textField2: UITextField!
+    @IBOutlet weak var resultLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        println(self.textField1.text)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +26,12 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func didClicked(sender: UIButton) {
+        var result=0
+        var value1 = self.textField1.text.toInt()
+        var value2 = self.textField2.text.toInt()
+        result = value1! + value2!
+        self.resultLabel.text = "\(result)"
+    }
 }
 
